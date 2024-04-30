@@ -1,0 +1,38 @@
+@startuml name
+title Street Fighter
+
+abstract class AKarakter{
+    -isim:Stiring
+    -hikaye:String
+    -can:int
+    ---
+    +getIsim():String
+    +setIsim()
+    +getHikaye():String
+    +setHikaye()
+    +getCan():int
+    +setCan()
+    ---
+    +AbstractKarakter(isim:String, hikaye:String, can:int)
+}
+
+class Karakter{
+    +AbstractKarakter(isim:String, hikaye:String, can:int)
+
+}
+
+interface ISaldiri{
+    +tekme()
+    +yumruk()
+}
+
+class Dovus{
+    -karakter1:Karakter
+    -karakter2:Karakter
+}
+
+ISaldiri ..|> Karakter
+AKarakter --|> Karakter
+
+hide empty members
+@enduml
